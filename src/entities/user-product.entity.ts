@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  ManyToOne,
+  JoinColumn,
+  OneToMany,
+} from 'typeorm';
 import { SummaryEntity } from './summary.entity';
 import { UserEntity } from './user.entity';
 
@@ -60,7 +67,6 @@ export class UserProductEntity {
   @JoinColumn({ name: 'user_id' })
   user: UserEntity;
 
-  @OneToMany(() => SummaryEntity, (sum) => sum.userProduct, { eager: true })
+  @OneToMany(() => SummaryEntity, (sum) => sum.userProduct)
   summaries: SummaryEntity[];
-
 }

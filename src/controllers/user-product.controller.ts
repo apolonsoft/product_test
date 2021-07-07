@@ -26,6 +26,8 @@ export class UserProductController {
 
   @Post('/delete')
   async delete(@Body() deleteUserProductDto: DeleteUserProductDto) {
-    return await this.userProductsRepositoryService.delete(deleteUserProductDto);
+    return await this.userProductsRepositoryService.delete(
+      deleteUserProductDto,
+    );
   }
 }

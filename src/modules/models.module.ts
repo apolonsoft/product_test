@@ -8,7 +8,9 @@ import { UsersProductsRepositoryService } from '../repositories/user-products.re
 import { UserProductController } from '../controllers/user-product.controller';
 import { SummaryEntity } from '../entities/summary.entity';
 @Module({
-  imports: [TypeOrmModule.forFeature([UserEntity, UserProductEntity,SummaryEntity])],
+  imports: [
+    TypeOrmModule.forFeature([UserEntity, UserProductEntity, SummaryEntity]),
+  ],
   providers: [UsersRepositoryService, UsersProductsRepositoryService],
   controllers: [UserController, UserProductController],
 })

@@ -9,7 +9,7 @@ module.exports = {
 
     synchronize: false,
     dropSchema: !!+process.env.TYPEORM_DROP_SCHEMA,
-    logging: true,
+    logging: false,
 
     entities: ['dist/**/*.entity.{ts,js}'],
 

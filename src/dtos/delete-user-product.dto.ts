@@ -1,4 +1,4 @@
 export interface DeleteUserProductDto {
-    userId: number;
-    asin: string;
-  }
+  userId: number;
+  asin: string;
+}
