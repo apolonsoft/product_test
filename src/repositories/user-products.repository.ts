@@ -33,9 +33,26 @@ export class UsersProductsRepositoryService {
     });
 
     const final = result.map((item) => {
-      const { asin, title } = item;
-      const organic = { label: 'ORGANIC', data: [] };
-      const ads = { label: 'ADS', data: [] };
+      const { asin, title, summaries } = item;
+
+      const organicData = summaries.map((s) => {
+        const { p0OrgPos: x, p0OrgPos2: y } = s;
+        return {
+          x,
+          y,
+        };
+      });
+
+      const adsData = summaries.map((s) => {
+        const { p0AdsPos: x, p0AdsPos2: y } = s;
+        return {
+          x,
+          y,
+        };
+      });
+
+      const organic = { label: 'ORGANIC', data: organicData };
+      const ads = { label: 'ADS', data: adsData };
       return {
         asin,
         title,
